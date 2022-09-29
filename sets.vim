@@ -12,7 +12,9 @@ set noerrorbells
 set nobackup
 set nowritebackup
 set noswapfile
-set undodir=/tmp/cache/.vimundodir
+if !has('win32')
+  set undodir=/tmp/cache/.vimundodir
+endif
 set undofile
 set incsearch
 set scrolloff=8

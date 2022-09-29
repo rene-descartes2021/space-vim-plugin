@@ -1,6 +1,8 @@
-let g:OmniSharp_log_dir = '/tmp/cache/omnisharp/log'
-call mkdir(g:OmniSharp_log_dir,'p')
-call mkdir(g:OmniSharp_log_dir.'-plugin','p')
+if !has('win32')
+  let g:OmniSharp_log_dir = '/tmp/cache/omnisharp/log'
+  call mkdir(g:OmniSharp_log_dir,'p')
+  call mkdir(g:OmniSharp_log_dir.'-plugin','p')
+endif
 
 let g:OmniSharp_diagnostic_overrides = {
 \ 'CS8019': {'type': 'None'}
